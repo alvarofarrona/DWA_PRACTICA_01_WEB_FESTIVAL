@@ -305,26 +305,8 @@ body {
   gap: 4em;
 }
 
-/* BLOQUES */
-.info-block {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  gap: 2em;
-  flex-wrap: wrap;
-  margin-bottom: 4em;
-}
-
 .info-block.reverse {
   flex-direction: row-reverse;
-}
-
-/* IMAGEN */
-.info-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .info-image img {
@@ -376,22 +358,6 @@ body {
 .info-button:hover {
   transform: scale(1.05); /* como .artista-card */
   background-color: #ffffff;
-}
-
-.foto-fondo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 200px; /* espacio arriba para que no se pegue al menú */
-  margin-bottom: 1em;
-}
-
-.foto-fondo img {
-  width: 80%;
-  max-width: 1600px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .modal-window {
@@ -687,11 +653,7 @@ input[type="number"] {
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(
-    6rem,
-    8vw,
-    8rem
-  ); /* 🔥 responsive: mínimo 2.5rem, máximo 8rem */
+  font-size: clamp(2.5rem, 6vw, 5rem); /* más pequeño y responsive */
   font-weight: bold;
   background: linear-gradient(135deg, #ff007f, #6a00f4, #00eaff);
   background-size: 600% 600%;
@@ -700,6 +662,7 @@ input[type="number"] {
   -webkit-text-fill-color: transparent;
   text-align: center;
   line-height: 1;
+  white-space: nowrap; /* 🔒 fuerza que todo esté en una sola línea */
   transition: transform 0.3s ease, font-size 0.3s ease;
 }
 
@@ -729,4 +692,154 @@ input[type="number"] {
   -webkit-text-fill-color: transparent;
   text-align: center;
   pointer-events: none;
+}
+/* BLOQUES */
+.info-block {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  margin-bottom: 4em;
+  position: relative;
+}
+
+.info-block.reverse {
+  flex-direction: row-reverse;
+}
+
+/* IMÁGENES: ahora dos columnas con dos imágenes cada una */
+.info-image {
+  flex: 1;
+  display: flex;
+  flex-direction: row; /* horizontal */
+  gap: 0; /* sin separación entre imágenes */
+}
+
+.info-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* TEXTO */
+.info-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: white;
+  padding: 1em;
+  max-width: 500px;
+  position: relative;
+}
+
+.info-content h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+  font-family: "Bebas Neue", sans-serif;
+  background: linear-gradient(135deg, #ff007f, #6a00f4, #00eaff);
+  background-size: 600% 600%;
+  animation: gradientMove 10s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* TEXTO */
+.info-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: white;
+  padding: 2em;
+  max-width: 500px;
+  position: relative;
+  z-index: 2; /* contenido por encima del fondo */
+}
+
+/* RECTÁNGULO DEGRADADO COMO FONDO */
+.info-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* cubre toda la caja de texto */
+  background-color: rgba(0, 0, 0, 0.5); /* fondo blanco semitransparente */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* sombra como las tarjetas */
+  z-index: 1;
+}
+
+/* TÍTULO Y BOTÓN ENCIMA */
+.info-content h2,
+.info-content p,
+.info-button {
+  position: relative;
+  z-index: 2;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .info-content {
+    font-size: 1rem;
+    padding: 1.5em;
+  }
+
+  .info-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .info-content::before {
+    border-radius: 0;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .info-block,
+  .info-block.reverse {
+    flex-direction: column;
+  }
+
+  .info-image {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .info-image img {
+    max-width: 100%;
+  }
+
+  .info-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .info-content {
+    font-size: 1rem;
+  }
+
+  .info-content::after {
+    height: 80px;
+  }
+}
+
+/* GRADIENT ANIMATION */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

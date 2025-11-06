@@ -92,21 +92,28 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const countdownElement = document.getElementById("countdown");
-const targetDate = new Date("2027-07-07T23:59:59").getTime();
+
+// Calcula la fecha objetivo sumando 121 días desde ahora
+const now = new Date();
+const targetDate = new Date(now.getTime() + 121 * 24 * 60 * 60 * 1000);
 
 function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = targetDate - now;
+  const currentTime = new Date().getTime();
+  const distance = targetDate.getTime() - currentTime;
 
+  if (distance < 0) {
+    countdownElement.textContent = "¡Comenzó!";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
   const minutes = Math.floor((distance / (1000 * 60)) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
 
-  countdownElement.textContent =
-    `${String(hours).padStart(2, "0")}:` +
-    `${String(minutes).padStart(2, "0")}:` +
-    `${String(seconds).padStart(2, "0")}`;
+  countdownElement.textContent = `${days}d ${hours}h ${minutes}m`;
 }
+
+setInterval(updateCountdown, 1000);
 
 setInterval(updateCountdown, 1000);
 
