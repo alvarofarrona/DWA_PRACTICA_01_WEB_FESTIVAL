@@ -538,7 +538,7 @@ body {
   color: #000000;
 }
 .ticket-section {
-  margin: 200px auto 0 auto; /* 🔽 esto empuja hacia abajo y centra horizontalmente */
+  margin: 100px auto 0 auto;
   background-color: rgba(0, 0, 0, 0.4);
   padding: 3em;
   border-radius: 15px;
@@ -886,17 +886,6 @@ input[type="number"] {
 .modal-mapa:hover {
   transform: scale(1.1);
 }
-.zoom-container {
-  width: 100%;
-  max-width: 500px;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 10px;
-  margin: 1em auto;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-  cursor: grab;
-  position: relative;
-}
 
 .zoom-image {
   width: 100%;
@@ -907,4 +896,121 @@ input[type="number"] {
 .zoom-container:hover .zoom-image {
   transform: scale(2); /* Puedes ajustar el nivel de zoom */
   transform-origin: center;
+}
+/* Patrocinadores con opacidad */
+.sponsors-strip {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0px 20px;
+  height: 230px;
+  text-align: center;
+  color: white;
+}
+
+.sponsors-strip h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.sponsor-logos img {
+  max-width: 120px;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* Footer negro completo */
+.footer-dark {
+  background: #000;
+  color: white;
+  padding: 40px 20px 20px;
+  font-size: 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-column h4 {
+  font-size: 34px;
+  margin-bottom: 20px;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: rgb(74, 74, 74);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+.sponsors-strip {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+.sponsors-strip h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.sponsor-logos img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.sponsor-logos img:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .sponsor-logos img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsor-logos img {
+    width: 60px;
+  }
 }
