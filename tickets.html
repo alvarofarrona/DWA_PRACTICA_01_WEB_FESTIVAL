@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neon fest</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="css/fotos/Gemini_Generated_Image_n6tvsjn6tvsjn6tv - Editada.png"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="tickets.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="logo gradient-text">neon fest</div>
+      <div class="burger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <ul class="menu">
+        <li><a href="artistas.html">Artista</a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="info.html">Info</a></li>
+      </ul>
+    </header>
+
+    <!-- Menú hamburguesa (pantalla pequeña) -->
+    <nav id="mainMenu" class="menu-mobile">
+      <li><a href="artistas.html">Artista</a></li>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="info.html">Info</a></li>
+      <span class="close-menu">&times;</span>
+    </nav>
+
+    <!-- SECCIÓN DE TICKETS -->
+    <section class="ticket-section">
+      <h1>Comprar Entradas</h1>
+      <form id="form">
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Entrada General</td>
+              <td>20 €</td>
+              <td><input type="number" min="0" value="0" data-price="20" /></td>
+            </tr>
+            <tr>
+              <td>Entrada VIP</td>
+              <td>50 €</td>
+              <td><input type="number" min="0" value="0" data-price="50" /></td>
+            </tr>
+            <tr>
+              <td>Backstage</td>
+              <td>100 €</td>
+              <td>
+                <input type="number" min="0" value="0" data-price="100" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="total">Total: <span id="totalPrice">0.00 €</span></div>
+        <button id="buyFood" class="btn disabled">Comprar</button>
+      </form>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
