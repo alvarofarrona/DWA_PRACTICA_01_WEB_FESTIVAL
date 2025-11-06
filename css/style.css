@@ -378,7 +378,7 @@ body {
 }
 
 .modal-content {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   color: black;
   padding: 2em;
   border-radius: 10px;
@@ -424,7 +424,7 @@ body {
 }
 
 .artistas-grid {
-  margin-top: 13%;
+  margin-top: 4%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -742,7 +742,7 @@ input[type="number"] {
   font-size: 2rem;
   margin-bottom: 0.5em;
   font-family: "Bebas Neue", sans-serif;
-  background: linear-gradient(135deg, #ff007f, #6a00f4, #00eaff);
+  background: linear-gradient(135deg, #ffffff);
   background-size: 600% 600%;
   animation: gradientMove 10s ease infinite;
   -webkit-background-clip: text;
@@ -842,4 +842,69 @@ input[type="number"] {
   100% {
     background-position: 0% 50%;
   }
+}
+.rave-symbols {
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+.star {
+  font-size: 2em;
+  margin: 0 0.3em;
+  display: inline-block;
+  animation: pulseStar 1s infinite alternate;
+}
+
+.star:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.star:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes pulseStar {
+  0% {
+    transform: scale(1);
+    color: #00ffff;
+  }
+  100% {
+    transform: scale(1.4);
+    color: #ff00ff;
+  }
+}
+.modal-mapa {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  margin: 1em auto;
+  display: block;
+  transition: transform 0.4s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  cursor: zoom-in;
+}
+
+.modal-mapa:hover {
+  transform: scale(1.1);
+}
+.zoom-container {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 1em auto;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  cursor: grab;
+  position: relative;
+}
+
+.zoom-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.zoom-container:hover .zoom-image {
+  transform: scale(2); /* Puedes ajustar el nivel de zoom */
+  transform-origin: center;
 }
