@@ -1,10 +1,10 @@
-//  menú hamburguesa //
-// selección de elementos del html //
+//  MENU HAMBURGESA  //
+
 let burger = document.querySelector(".burger > i");
 let menu_opt = document.querySelector(".menu-mobile");
 let closeMenuBtn = document.querySelector(".close-menu");
 
-// definir evento click sobre el botón del menú //
+////
 burger.addEventListener("click", function () {
   let isOpen = menu_opt.classList.contains("menu-show");
 
@@ -19,14 +19,14 @@ burger.addEventListener("click", function () {
   }
 });
 
-// cerrar menú al hacer clic en la cruz //
+////
 closeMenuBtn.addEventListener("click", function () {
   menu_opt.classList.remove("menu-show");
   burger.classList.remove("fa-times");
   burger.classList.add("fa-bars");
 });
 
-// abrir el modal correspondiente al botón //
+////VENTANAS MODALES LEER MAS INICIO////
 document.querySelectorAll(".info-button[data-modal]").forEach((btn) => {
   btn.addEventListener("click", () => {
     const modalId = btn.getAttribute("data-modal");
@@ -37,7 +37,7 @@ document.querySelectorAll(".info-button[data-modal]").forEach((btn) => {
   });
 });
 
-// cerrar el modal con la X o el botón "Cerrar"
+////
 document
   .querySelectorAll(".modal-window .close, .modal-window .close-button")
   .forEach((btn) => {
@@ -49,7 +49,7 @@ document
     });
   });
 
-// cerrar el modal al hacer clic fuera del contenido
+// fuera del contenido//
 window.addEventListener("click", (e) => {
   document.querySelectorAll(".modal-window").forEach((modal) => {
     if (e.target === modal) {
@@ -62,12 +62,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const inputs = document.querySelectorAll('input[type="number"]');
   const totalPriceElement = document.getElementById("totalPrice");
 
-  // Añadir a cada input un evento change para calcular el precio total
+  //CALCULAR PRECIO TICKETS
   inputs.forEach((input) => {
     input.addEventListener("change", calculateTotalPrice);
   });
 
-  // Función para calcular el precio total
+  // precio total
   function calculateTotalPrice() {
     let totalPrice = 0;
     inputs.forEach((input) => {
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const countdownElement = document.getElementById("countdown");
 
-// Calcula la fecha objetivo sumando 121 días desde ahora
+// COUNT DOWN 121 DIAS
 const now = new Date();
 const targetDate = new Date(now.getTime() + 121 * 24 * 60 * 60 * 1000);
 
@@ -117,7 +117,7 @@ setInterval(updateCountdown, 1000);
 
 setInterval(updateCountdown, 1000);
 
-// scroll menu
+// HACER MENU EPQUEÑO AL SCROLLEAR //
 
 function shrinkHeader() {
   const scroll = window.scrollY;
@@ -140,18 +140,18 @@ for (let i = 0; i < numCircles; i++) {
   const circle = document.createElement("div");
   circle.classList.add("circle");
 
-  // Tamaño fijo pequeño
+  // PEQUEÑO
   circle.style.width = "1px";
   circle.style.height = "1px";
 
-  // Posición inicial sin transición
+  // AL EMPEZAR
   circle.style.top = `${Math.random() * 100}vh`;
   circle.style.left = `${Math.random() * 100}vw`;
   circle.style.transition = "none";
 
   container.appendChild(circle);
 
-  // Esperar un frame para aplicar transición y movimiento
+  // EsPERAR
   requestAnimationFrame(() => {
     animateCircle(circle);
   });
@@ -170,7 +170,7 @@ function animateCircle(circle) {
     setTimeout(move, duration);
   };
 
-  move(); // inicia el movimiento sincronizado
+  move(); // INICIAR MOV
 }
 window.addEventListener("scroll", shrinkHeader);
 
@@ -185,3 +185,42 @@ function shrinkHeader() {
     header.classList.remove("shrink");
   }
 }
+// VENTANA MODAL NEWSLETTER
+window.addEventListener("load", function () {
+  setTimeout(openModalWindow, 2000);
+});
+
+//  abrir/cerrar
+let btnOpenModal = document.querySelector("#openModal");
+
+if (btnOpenModal) {
+  btnOpenModal.addEventListener("click", openModalWindow);
+}
+
+function openModalWindow() {
+  let modalWindow = document.querySelector("#modalWindow");
+  modalWindow.classList.add("show-modal");
+}
+
+let btnCloseModal = document.querySelector(
+  "#modalWindow > .modal-content > .close"
+);
+let btnCloseModalAccept = document.querySelector(
+  "#modalWindow > .modal-content > #closeModalAccept"
+);
+
+btnCloseModal.addEventListener("click", closeModalWindow);
+btnCloseModalAccept.addEventListener("click", closeModalWindow);
+
+function closeModalWindow() {
+  let modalWindow = document.querySelector("#modalWindow");
+  modalWindow.classList.remove("show-modal");
+}
+
+//  al hacer clic fuera del contenido
+window.addEventListener("click", function (evento) {
+  let modal = document.querySelector("#modalWindow");
+  if (evento.target == modal) {
+    closeModalWindow();
+  }
+});
