@@ -133,5 +133,55 @@ function shrinkHeader() {
     logo.classList.remove("logo-small");
   }
 }
+const container = document.querySelector(".circle-background");
+const numCircles = 1070;
 
+for (let i = 0; i < numCircles; i++) {
+  const circle = document.createElement("div");
+  circle.classList.add("circle");
+
+  // Tamaño fijo pequeño
+  circle.style.width = "1px";
+  circle.style.height = "1px";
+
+  // Posición inicial sin transición
+  circle.style.top = `${Math.random() * 100}vh`;
+  circle.style.left = `${Math.random() * 100}vw`;
+  circle.style.transition = "none";
+
+  container.appendChild(circle);
+
+  // Esperar un frame para aplicar transición y movimiento
+  requestAnimationFrame(() => {
+    animateCircle(circle);
+  });
+}
+
+function animateCircle(circle) {
+  const move = () => {
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    const duration = 3000 + Math.random() * 2000;
+
+    circle.style.transition = `top ${duration}ms ease-in-out, left ${duration}ms ease-in-out`;
+    circle.style.top = `${y}vh`;
+    circle.style.left = `${x}vw`;
+
+    setTimeout(move, duration);
+  };
+
+  move(); // inicia el movimiento sincronizado
+}
 window.addEventListener("scroll", shrinkHeader);
+
+function shrinkHeader() {
+  const header = document.querySelector("header");
+
+  if (!header) return;
+
+  if (window.scrollY > 50) {
+    header.classList.add("shrink");
+  } else {
+    header.classList.remove("shrink");
+  }
+}

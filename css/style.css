@@ -344,7 +344,7 @@ body {
   display: inline-block;
   margin-top: 1.5em;
   padding: 0.6em 1.5em;
-  background-color: rgba(255, 255, 255, 0.4); /* como .artista-card */
+  background-color: rgba(255, 255, 255, 0.7); /* como .artista-card */
   color: rgb(0, 0, 0);
   font-weight: bold;
   text-decoration: none;
@@ -539,7 +539,7 @@ body {
 }
 .ticket-section {
   margin: 100px auto 0 auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.9);
   padding: 3em;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 10);
@@ -1013,4 +1013,108 @@ input[type="number"] {
   .sponsor-logos img {
     width: 60px;
   }
+}
+.footer-dark {
+  background: #000;
+  color: white;
+  padding: 40px 20px 20px;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-column h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #0ff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* ✅ Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer-column ul li a {
+    font-size: 15px;
+  }
+}
+.circle-background {
+  z-index: -1000; /* Muy por debajo de todo */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin-top: 10%;
+
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  background: transparent;
+}
+header {
+  transition: all 0.3s ease;
+  height: 100px; /* altura normal */
+}
+
+header.shrink {
+  height: 10px; /* altura reducida al hacer scroll */
+}
+
+.logo {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+header.shrink .logo {
+  font-size: 30px;
 }
