@@ -40,7 +40,7 @@ body {
   right: 0;
   width: 96%;
   z-index: 1000;
-  height: 7em; /* altura base */
+  height: 7em;
   transition: height 0.3s ease;
 }
 
@@ -59,7 +59,7 @@ body {
 
 /* LOGO CON DEGRADADO Y TIPOGRAFÍA PRINCIPAL */
 .logo.gradient-text {
-  font-family: var(--font-main); /* misma fuente que el resto */
+  font-family: var(--font-main);
   font-size: 7rem;
   font-weight: bold;
   letter-spacing: 2px;
@@ -87,7 +87,7 @@ body {
   z-index: 1;
 }
 body {
-  padding-top: 100px; /* ajusta según la altura real del navbar + logo */
+  padding-top: 100px;
 }
 
 /* HOVER CON DEGRADADO ANIMADO */
@@ -186,7 +186,7 @@ body {
   cursor: pointer;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE menu burger y botón*/
 @media (max-width: 768px) {
   .burger {
     display: block;
@@ -200,7 +200,7 @@ body {
     font-size: 2.5rem;
   }
 }
-/* Mostrar menú normal en pantallas grandes */
+/* mostrar menu normal en pantallas las grandes */
 @media (min-width: 769px) {
   .menu {
     display: flex !important;
@@ -256,7 +256,7 @@ body {
 
 .menu-mobile li a {
   text-decoration: none;
-  color: white; /* ← asegúrate de que el color sea visible */
+  color: white;
   font-size: 2rem;
   font-weight: bold;
   transition: transform 0.3s ease, color 0.3s ease;
@@ -280,14 +280,10 @@ body {
   color: white;
   cursor: pointer;
 }
-
-/* Estado reducido del header */
 .navbar.shrink {
   height: 5em;
   transition: height 0.3s ease;
 }
-
-/* Logo más pequeño */
 .logo.gradient-text.logo-small {
   font-size: 3rem;
   transition: font-size 0.3s ease;
@@ -339,24 +335,24 @@ body {
   color: transparent;
 }
 
-/* BOTÓN BONITO */
+/* BOTÓN BONITO modal */
 .info-button {
   display: inline-block;
   margin-top: 1.5em;
   padding: 0.6em 1.5em;
-  background-color: rgba(255, 255, 255, 0.7); /* como .artista-card */
+  background-color: rgba(255, 255, 255, 0.7);
   color: rgb(0, 0, 0);
   font-weight: bold;
   text-decoration: none;
-  border-radius: 10px; /* como .artista-card */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 1); /* como .artista-card */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
   transition: transform 0.3s ease;
   border: none;
   cursor: pointer;
 }
 
 .info-button:hover {
-  transform: scale(1.05); /* como .artista-card */
+  transform: scale(1.05);
   background-color: #ffffff;
 }
 
@@ -441,7 +437,7 @@ body {
   width: calc(25% - 2em);
   min-width: 200px;
   max-width: 250px;
-  margin-top: 20px; /* 🔽 reducido de 50px a 20px */
+  margin-top: 20px;
   padding: 1em;
   background-color: rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 30px rgba(0, 255, 255, 0.9);
@@ -459,10 +455,10 @@ body {
   height: auto;
   border-radius: 2px;
   margin-bottom: em;
-  width: 240px; /* Ajusta el ancho deseado */
-  height: 240px; /* Ajusta la altura deseada */
+  width: 240px;
+  height: 240px;
   width: 100%;
-  aspect-ratio: 1 / 1; /* cuadrado responsivo */
+  aspect-ratio: 1 / 1;
   overflow: hidden;
 
   object-fit: cover;
@@ -475,7 +471,7 @@ body {
   color: #fff;
 }
 
-/* Responsive ajustes */
+/* Responsive ajustes de los artistas */
 @media (max-width: 1024px) {
   .artista-card {
     width: calc(33.333% - 2em);
@@ -495,7 +491,7 @@ body {
 }
 .artistas-footer {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* negro con opacidad */
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
   text-align: center;
   padding: 2em 1em;
@@ -655,7 +651,7 @@ input[type="number"] {
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2.5rem, 6vw, 5rem); /* más pequeño y responsive */
+  font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: bold;
   background: linear-gradient(135deg, #ff007f, #6a00f4, #00eaff);
   background-size: 600% 600%;
@@ -664,7 +660,7 @@ input[type="number"] {
   -webkit-text-fill-color: transparent;
   text-align: center;
   line-height: 1;
-  white-space: nowrap; /* 🔒 fuerza que todo esté en una sola línea */
+  white-space: nowrap;
   transition: transform 0.3s ease, font-size 0.3s ease;
 }
 
@@ -710,12 +706,11 @@ input[type="number"] {
   flex-direction: row-reverse;
 }
 
-/* IMÁGENES: ahora dos columnas con dos imágenes cada una */
 .info-image {
   flex: 1;
   display: flex;
-  flex-direction: row; /* horizontal */
-  gap: 0; /* sin separación entre imágenes */
+  flex-direction: row;
+  gap: 0;
 }
 
 .info-image img {
@@ -727,7 +722,6 @@ input[type="number"] {
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* TEXTO */
 .info-content {
   flex: 1;
   display: flex;
@@ -754,7 +748,6 @@ input[type="number"] {
   color: transparent;
 }
 
-/* TEXTO */
 .info-content {
   flex: 1;
   display: flex;
@@ -766,20 +759,19 @@ input[type="number"] {
   padding: 2em;
   max-width: 500px;
   position: relative;
-  z-index: 2; /* contenido por encima del fondo */
+  z-index: 2;
 }
 
-/* RECTÁNGULO DEGRADADO COMO FONDO */
 .info-content::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* cubre toda la caja de texto */
-  background-color: rgba(0, 0, 0, 0.5); /* fondo blanco semitransparente */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* sombra como las tarjetas */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -791,7 +783,7 @@ input[type="number"] {
   z-index: 2;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE de info */
 @media (max-width: 768px) {
   .info-content {
     font-size: 1rem;
@@ -807,7 +799,6 @@ input[type="number"] {
   }
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .info-block,
   .info-block.reverse {
@@ -835,7 +826,6 @@ input[type="number"] {
   }
 }
 
-/* GRADIENT ANIMATION */
 @keyframes gradientMove {
   0% {
     background-position: 0% 50%;
@@ -898,10 +888,10 @@ input[type="number"] {
 }
 
 .zoom-container:hover .zoom-image {
-  transform: scale(2); /* Puedes ajustar el nivel de zoom */
+  transform: scale(2);
   transform-origin: center;
 }
-/* Patrocinadores con opacidad */
+
 .sponsors-strip {
   background: rgba(0, 0, 0, 0.6);
   padding: 0px 20px;
@@ -929,7 +919,6 @@ input[type="number"] {
   opacity: 0.9;
 }
 
-/* Footer negro completo */
 .footer-dark {
   background: #000;
   color: white;
@@ -1006,7 +995,7 @@ input[type="number"] {
   transform: scale(1.05);
 }
 
-/* ✅ Media queries para pantallas pequeñas */
+/* edia queries para pantallas pequeñas */
 @media (max-width: 768px) {
   .sponsor-logos img {
     width: 80px;
@@ -1069,7 +1058,7 @@ input[type="number"] {
   opacity: 0.6;
 }
 
-/* ✅ Media query para pantallas pequeñas */
+/*media query para pantallas pequeñas */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -1087,7 +1076,7 @@ input[type="number"] {
   }
 }
 .circle-background {
-  z-index: -1000; /* Muy por debajo de todo */
+  z-index: -1000;
   position: fixed;
   top: 0;
   left: 0;
@@ -1107,11 +1096,11 @@ input[type="number"] {
 }
 header {
   transition: all 0.3s ease;
-  height: 100px; /* altura normal */
+  height: 100px;
 }
 
 header.shrink {
-  height: 10px; /* altura reducida al hacer scroll */
+  height: 10px;
 }
 
 .logo {
@@ -1122,7 +1111,7 @@ header.shrink {
 header.shrink .logo {
   font-size: 30px;
 }
-/* 🔷 Sección principal */
+
 .info-news {
   padding: 80px 40px;
   background-color: #000;
@@ -1130,16 +1119,14 @@ header.shrink .logo {
   font-family: "Space Grotesk", sans-serif;
 }
 
-/* 🔷 Layout con separación justa */
 .news-layout {
   display: flex;
   margin-top: 5%;
-  gap: 5px; /* 🔧 Menos separación entre tarjeta grande y columna */
+  gap: 5px;
   align-items: stretch;
   flex-wrap: wrap;
 }
 
-/* 🔷 Tarjeta grande */
 .large-card {
   flex: 2;
   min-width: 180px;
@@ -1147,16 +1134,14 @@ header.shrink .logo {
   flex-direction: column;
 }
 
-/* 🔷 Columna derecha con tarjetas más compactas */
 .side-column {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* 🔧 Menos espacio entre las dos pequeñas */
+  gap: 10px;
   min-width: 600px;
 }
 
-/* 🔷 Tarjetas */
 .card {
   background-color: rgba(0, 0, 0, 0.85);
   border: 5px solid #ffffff;
@@ -1164,7 +1149,7 @@ header.shrink .logo {
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
   transition: transform 0.3s ease;
-  transform: scale(0.95); /* 🔧 Escala más pequeña pero sin romper layout */
+  transform: scale(0.95);
 }
 
 .card:hover {
@@ -1172,7 +1157,6 @@ header.shrink .logo {
   background-color: rgba(0, 0, 0, 1);
 }
 
-/* 🔷 Imágenes */
 .img-grande {
   width: 100%;
   height: 360px;
@@ -1185,7 +1169,6 @@ header.shrink .logo {
   object-fit: cover;
 }
 
-/* 🔷 Contenido */
 .card-content {
   padding: 16px;
 }
@@ -1202,7 +1185,6 @@ header.shrink .logo {
   color: #ccc;
 }
 
-/* 🔷 Responsive */
 @media (max-width: 768px) {
   .news-layout {
     flex-direction: column;
@@ -1231,7 +1213,6 @@ header.shrink .logo {
   }
 }
 
-/* 🔷 Contenido */
 .card-content {
   padding: 20px;
 }
@@ -1248,7 +1229,6 @@ header.shrink .logo {
   color: #ccc;
 }
 
-/* 🔷 Responsive */
 @media (max-width: 768px) {
   .news-layout {
     flex-direction: column;
@@ -1284,9 +1264,8 @@ header.shrink .logo {
   flex-wrap: wrap;
 }
 
-/* Tarjetas cuadradas */
 .bottom-card {
-  width: 440px; /* 🔧 Ajusta para que quepan bien las tres */
+  width: 440px;
   background-color: rgba(0, 0, 0, 0.85);
   border: 5px solid #ffffff;
   border-radius: 12px;
@@ -1301,14 +1280,12 @@ header.shrink .logo {
   background-color: rgba(0, 0, 0, 1);
 }
 
-/* Imágenes cuadradas */
 .img-cuadrada {
   width: 100%;
   height: 160px;
   object-fit: cover;
 }
 
-/* Contenido */
 .card-content {
   padding: 16px;
 }
@@ -1324,7 +1301,6 @@ header.shrink .logo {
   color: #ccc;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .bottom-row {
     flex-direction: column;
@@ -1353,13 +1329,12 @@ header.shrink .logo {
   letter-spacing: 2px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .cta-text {
     font-size: 32px;
   }
 }
-/* 🔔 Modal base */
+
 .modal {
   display: none;
   position: fixed;
@@ -1371,14 +1346,12 @@ header.shrink .logo {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* 🔔 Mostrar modal */
 .show-modal {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* 🔔 Contenido del modal */
 .modal-content {
   background-color: rgba(0, 0, 0, 0.5);
   border: 2px solid #0ff;
@@ -1392,7 +1365,6 @@ header.shrink .logo {
   font-family: "Space Grotesk", sans-serif;
 }
 
-/* 🔔 Botón cerrar */
 .modal-content .close {
   position: absolute;
   top: 20px;
@@ -1402,7 +1374,6 @@ header.shrink .logo {
   cursor: pointer;
 }
 
-/* 🔔 Input y botón */
 .modal-content input {
   width: 100%;
   padding: 12px;
